@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    box-sizing: border-box !important;
+  }
+
+  html {
+    @apply text-mono;
+  }
+  body {
+    font-family: "Red Hat Display", sans-serif;
+    line-height: 1.4444444;
+    
+    p {
+      @screen md {
+        @apply text-lg;
+      }
+    }
+
+    h1,
+    h2 {
+      font-weight: 900;
+      @apply text-text;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.1;
+      @apply text-text;
+      @screen md {
+        font-size: 3rem;
+      }
+      @screen lg {
+        font-size: 4rem;
+        line-height: 1;
+      }
+    }
+
+    h2 {
+      font-size: 2rem;
+
+      @screen md {
+        font-size: 2.5rem;
+      }
+
+    }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-7 py-4 rounded-full  text-white bg-primary leading-relaxed font-black w-fit hover:bg-tertiary focus:bg-tertiary ease-in duration-100;
+  }
+  .btn-secondary {
+    @apply px-7 py-4 rounded-full text-white bg-secondary leading-relaxed font-black w-fit hover:bg-[#B18BDD] ease-in duration-100;
+  }
+  .number-circle-container {
+    @apply h-[140px] m-auto w-fit;
+  }
+  .line {
+    @apply bg-border w-[1px] h-20 m-auto;
+  }
+  .number-circle {
+    @apply bg-white flex justify-center items-center w-14 aspect-square rounded-full border border-solid border-t-border;
+  }
+}
